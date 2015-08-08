@@ -33,4 +33,7 @@
 
     <!-- Whether to cancel fingerprint operation if not idle -->
     <bool name="config_fpCancelIfNotIdle">false</bool>
+
+    <!-- Minimum distance to swipe down with three fingers to trigger screenshot action -->
+    <integer name="config_threeFingerSwipeDistance">350</integer>
 </resources>
