@@ -111,13 +111,16 @@
     <string name="qs_menu_item_columns_auto">Automatic</string>
     <string name="qs_menu_item_titles">Show labels</string>
 	
-	<!-- Status Bar icons -->
+    <!-- Status Bar icons -->
     <string name="statusbar_items_title">Statusbar icon</string>
 
     <!-- DataSwitch Tile -->
     <string name="qs_data_switch_label">Switch data card</string>
     <string name="qs_data_switch_changed_1">Using SIM 1 for Mobile data</string>
     <string name="qs_data_switch_changed_2">Using SIM 2 for Mobile data</string>
+
+    <!-- SleepScreen QS Tile -->
+    <string name="quick_settings_sleepscreen_label">Sleep Screen</string>
 
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Force stop?</string>
