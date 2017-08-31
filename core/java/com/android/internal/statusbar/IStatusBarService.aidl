@@ -150,4 +150,9 @@ interface IStatusBarService
      * display.
      */
     void suppressAmbientDisplay(boolean suppress);
+
+    /**
+     * STREAK extensions
+     */
+    void toggleCameraFlash();
 }
