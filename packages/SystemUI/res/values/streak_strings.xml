@@ -29,4 +29,7 @@
     <string name="quick_settings_qr_description">Tap to scan</string>
     <string name="qr_code_activity_title">QR code scanner</string>
     <string name="delete_text_history">Clear history</string>
+
+    <!-- Statusbar tuner -->
+    <string name="statusbar_items_title">Statusbar icons</string>
 </resources>
