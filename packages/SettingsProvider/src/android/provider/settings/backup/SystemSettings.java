@@ -100,5 +100,7 @@ public class SystemSettings {
         Settings.System.BUTTON_BRIGHTNESS,
         Settings.System.BUTTON_BACKLIGHT_TIMEOUT,
         Settings.System.RINGTONE_VIBRATION_PATTERN,
+        Settings.System.QS_SHOW_BRIGHTNESS,
+        Settings.System.QS_BRIGHTNESS_POSITION_BOTTOM,
     };
 }
