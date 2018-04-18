@@ -75,4 +75,7 @@
     <string name="gaming_mode_panel_brightness_title">Disable automatic brightness</string>
     <string name="gaming_mode_panel_media_title">Set Media Volume</string>
 
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
+
 </resources>
