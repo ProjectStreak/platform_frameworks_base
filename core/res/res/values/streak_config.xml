@@ -80,4 +80,7 @@
     <integer name="config_maxVisibleNotificationIcons">4</integer>
     <integer name="config_maxVisibleNotificationIconsOnLock">5</integer>
 
+    <!-- Whether device has an alert slider. -->
+    <bool name="config_hasAlertSlider">false</bool>
+
 </resources>
