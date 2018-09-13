@@ -96,5 +96,6 @@ public class SystemSettings {
         Settings.System.OMNI_QS_LAYOUT_COLUMNS,
         Settings.System.OMNI_QS_TILE_TITLE_VISIBILITY,
         Settings.System.VOLUME_BUTTON_MUSIC_CONTROL,
+        Settings.System.USE_OLD_MOBILETYPE,
     };
 }
