@@ -4927,6 +4927,14 @@ public final class Settings {
         public static final String VOWIFI_ICON = "vowifi_icon";
 
         /**
+         * Whether to show the kill app button in notification guts
+         *
+         * @hide
+         */
+        public static final String NOTIFICATION_GUTS_KILL_APP_BUTTON =
+                "notification_guts_kill_app_button";
+
+        /**
          * Wheter to show network traffic indicator in statusbar
          * @hide
          */
