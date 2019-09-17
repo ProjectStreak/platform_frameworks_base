@@ -105,5 +105,6 @@ public class SystemSettings {
         Settings.System.QS_SHOW_BRIGHTNESS_ABOVE_FOOTER,
         Settings.System.QS_SHOW_AUTO_BRIGHTNESS,
         Settings.System.SMART_SPACE,
+        Settings.System.COLOR_BUCKET_OVERLAY
     };
 }
