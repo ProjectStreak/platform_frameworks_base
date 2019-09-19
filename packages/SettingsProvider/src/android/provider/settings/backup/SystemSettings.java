@@ -92,5 +92,8 @@ public class SystemSettings {
         Settings.System.GAMING_MODE_MEDIA_ENABLED,
         Settings.System.GAMING_MODE_MEDIA,
         Settings.System.DOZE_ON_CHARGE,
+        Settings.System.OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE,
+        Settings.System.OMNI_QS_LAYOUT_COLUMNS,
+        Settings.System.OMNI_QS_TILE_TITLE_VISIBILITY,
     };
 }
