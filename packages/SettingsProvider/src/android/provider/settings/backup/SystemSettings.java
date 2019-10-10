@@ -103,5 +103,8 @@ public class SystemSettings {
         Settings.System.RINGTONE_VIBRATION_PATTERN,
         Settings.System.SMART_SPACE,
         Settings.System.COLOR_BUCKET_OVERLAY
+        Settings.System.PULSE_AMBIENT_LIGHT,
+        Settings.System.AMBIENT_NOTIFICATION_LIGHT_ENABLED,
+        Settings.System.AMBIENT_NOTIFICATION_LIGHT,
     };
 }
