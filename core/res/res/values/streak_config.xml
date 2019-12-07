@@ -60,4 +60,8 @@
     <!-- make sure you enable this only if your device supports deep slepp
     with active proximity sensor event listener -->
     <bool name="config_proxiSensorWakupCheck">false</bool>
+
+    <string-array translatable="false" name="config_customPermissionsList">
+        <!-- <item>more packages</item>-->
+    </string-array>
 </resources>
