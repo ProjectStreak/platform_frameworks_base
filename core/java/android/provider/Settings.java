@@ -4971,6 +4971,12 @@ public final class Settings {
          */
 
         /**
+         * FOD recognizing animation
+         * @hide
+         */
+        public static final String FOD_RECOGNIZING_ANIMATION = "fod_recognizing_animation";
+
+	/**
          * Show 4G instead of LTE
          * @hide
          */
