@@ -235,6 +235,9 @@ public class SystemSettingsValidators {
         VALIDATORS.put(System.BUTTON_BACKLIGHT_TIMEOUT, NON_NEGATIVE_INTEGER_VALIDATOR);
         VALIDATORS.put(System.RINGTONE_VIBRATION_PATTERN, new InclusiveIntegerRangeValidator(0, 4));
         VALIDATORS.put(System.SMART_SPACE, BOOLEAN_VALIDATOR);
+        VALIDATORS.put(System.NOTIFICATION_PULSE, BOOLEAN_VALIDATOR);
+        VALIDATORS.put(System.AOD_NOTIFICATION_PULSE, BOOLEAN_VALIDATOR);
+        VALIDATORS.put(System.NOTIFICATION_PULSE_ACCENT, BOOLEAN_VALIDATOR);
         VALIDATORS.put(
                 System.COLOR_BUCKET_OVERLAY,
                 new Validator() {
@@ -246,9 +249,5 @@ public class SystemSettingsValidators {
                         return true;
                     }
                 });
-        VALIDATORS.put(System.PULSE_AMBIENT_LIGHT, BOOLEAN_VALIDATOR);
-        VALIDATORS.put(System.AMBIENT_NOTIFICATION_LIGHT_ENABLED, BOOLEAN_VALIDATOR);
-        VALIDATORS.put(System.AMBIENT_NOTIFICATION_LIGHT, BOOLEAN_VALIDATOR);
-        VALIDATORS.put(System.AMBIENT_NOTIFICATION_LIGHT_ACCENT, BOOLEAN_VALIDATOR);
     }
 }
