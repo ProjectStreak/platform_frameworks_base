@@ -5176,6 +5176,12 @@ public final class Settings {
          * @hide
          */
         public static final String GLOBAL_ACTIONS_MAX_COLUMNS = "global_actions_max_columns";
+		
+        /**
+         * Whether to use new QS panel bg tint or not
+         * @hide
+         */
+        public static final String QS_PANEL_BG_USE_NEW_TINT = "qs_panel_bg_use_new_tint";
 
         /**
          * Whether to show arrow keys in navigation bar
@@ -5393,6 +5399,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(ALLOW_INCALL_HOME);
             PRIVATE_SETTINGS.add(BACK_GESTURE_HAPTIC);
             PRIVATE_SETTINGS.add(CENTER_NOTIFICATION_HEADERS);
+            PRIVATE_SETTINGS.add(QS_PANEL_BG_USE_NEW_TINT);
         }
 
         /**
