@@ -7432,5 +7432,8 @@ message MetricsEvent {
     // StreakSettings constant
     STREAK_SETTINGS = 1999;
 
+     // Panel for Bluetooth
+    PANEL_BLUETOOTH = 9996;
+	
   }
 }
