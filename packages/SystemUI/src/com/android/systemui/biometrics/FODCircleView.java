@@ -25,6 +25,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
+import android.hardware.biometrics.BiometricSourceType;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.RemoteException;
@@ -144,6 +145,14 @@ public class FODCircleView extends ImageView {
         public void onScreenTurnedOff() {
             hideCircle();
         }
+
+        @Override
+        public void onBiometricHelp(int msgId, String helpString,
+                BiometricSourceType biometricSourceType) {
+            if (msgId == -1){ // Auth error
+                mHandler.post(() -> mFODAnimation.hideFODanimation());
+            }
+        }
     };
 
     public FODCircleView(Context context) {
@@ -230,7 +239,9 @@ public class FODCircleView extends ImageView {
 
         if (event.getAction() == MotionEvent.ACTION_DOWN && newIsInside) {
             showCircle();
-            mFODAnimation.showFODanimation();
+            mIsRecognizingAnimEnabled = Settings.System.getInt(mContext.getContentResolver(),
+            Settings.System.FOD_RECOGNIZING_ANIMATION, 0) != 0;
+            if (mIsRecognizingAnimEnabled) mFODAnimation.showFODanimation();
             return true;
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
             hideCircle();
@@ -349,11 +360,6 @@ public class FODCircleView extends ImageView {
 
     private void updateAlpha() {
         setAlpha(mIsDreaming ? 0.5f : 1.0f);
-    }
-
-    private void updateStyle() {
-        mIsRecognizingAnimEnabled = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.FOD_RECOGNIZING_ANIMATION, 0) != 0;
     }
 
     private void updatePosition() {
