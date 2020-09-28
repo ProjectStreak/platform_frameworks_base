@@ -69,6 +69,9 @@ public class FODCircleView extends ImageView {
     private int mDreamingOffsetX;
     private int mDreamingOffsetY;
 
+    private int mColor;
+    private int mColorBackground;
+
     private boolean mIsBouncer;
     private boolean mIsDreaming;
     private boolean mIsCircleShowing;
@@ -132,6 +135,8 @@ public class FODCircleView extends ImageView {
 
     public FODCircleView(Context context) {
         super(context);
+		
+        setScaleType(ScaleType.CENTER);
 
         IFingerprintInscreen daemon = getFingerprintInScreenDaemon();
         if (daemon == null) {
@@ -148,9 +153,12 @@ public class FODCircleView extends ImageView {
         }
 
         Resources res = context.getResources();
+		
+        mColor = res.getColor(R.color.config_fodColor);
+        mColorBackground = res.getColor(R.color.config_fodColorBackground);
 
         mPaintFingerprint.setAntiAlias(true);
-        mPaintFingerprint.setColor(res.getColor(R.color.config_fodColor));
+        mPaintFingerprint.setColor(mColorBackground);
 
         mPaintFingerprintBackground.setColor(res.getColor(R.color.config_fodColorBackground));
         mPaintFingerprintBackground.setAntiAlias(true);
@@ -182,9 +190,7 @@ public class FODCircleView extends ImageView {
         mPressedView = new ImageView(context)  {
             @Override
             protected void onDraw(Canvas canvas) {
-                if (mIsCircleShowing) {
-                    canvas.drawCircle(mSize / 2, mSize / 2, mSize / 2.0f, mPaintFingerprint);
-                }
+                canvas.drawCircle(mSize / 2, mSize / 2, mSize / 2.0f, mPaintFingerprint);
                 super.onDraw(canvas);
             }
         };
@@ -287,6 +293,7 @@ public class FODCircleView extends ImageView {
         setDim(true);
         dispatchPress();
 
+        mPaintFingerprint.setColor(mColor);
         setImageDrawable(null);
         invalidate();
     }
@@ -294,6 +301,7 @@ public class FODCircleView extends ImageView {
     public void hideCircle() {
         mIsCircleShowing = false;
 
+        mPaintFingerprint.setColor(mColorBackground);
         setImageResource(R.drawable.fod_icon_default);
         invalidate();
 
