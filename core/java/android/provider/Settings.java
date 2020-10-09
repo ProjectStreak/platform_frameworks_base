@@ -4870,6 +4870,12 @@ public final class Settings {
         public static final String GAMING_MODE_MEDIA = "gaming_mode_media";
 
         /**
+         * Controls whether to show notification headers
+         * @hide
+         */
+        public static final String NOTIFICATION_HEADERS = "notification_headers";
+
+        /**
          * Whether to enable DOZE only when charging
          * @hide
          */
