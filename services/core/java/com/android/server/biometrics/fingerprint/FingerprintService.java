@@ -77,6 +77,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.android.internal.util.custom.FodUtils;
+
 import vendor.lineage.biometrics.fingerprint.inscreen.V1_0.IFingerprintInscreen;
 
 import java.io.File;
@@ -810,7 +812,7 @@ public class FingerprintService extends BiometricServiceBase {
                 getLockoutBroadcastPermission(), null /* handler */);
 
         PackageManager packageManager = context.getPackageManager();
-        mHasFod = context.getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView);
+        mHasFod = FodUtils.hasFodSupport(context);
     }
 
     @Override

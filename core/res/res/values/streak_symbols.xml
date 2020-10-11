@@ -16,8 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Whether to show a custom view for FOD -->
-    <java-symbol type="bool" name="config_needCustomFODView" />
+    <!-- In-display Fingerprint -->
+    <java-symbol type="bool" name="config_supportsInDisplayFingerprint" />
 
     <!-- App error dialog -->
     <java-symbol type="id" name="aerr_copy" />
