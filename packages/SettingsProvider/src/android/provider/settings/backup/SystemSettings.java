@@ -94,6 +94,7 @@ public class SystemSettings {
         Settings.System.DOZE_ON_CHARGE,
         Settings.System.OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE,
         Settings.System.OMNI_QS_LAYOUT_COLUMNS,
+        Settings.System.QS_LAYOUT_ROWS,
         Settings.System.OMNI_QS_TILE_TITLE_VISIBILITY,
         Settings.System.VOLUME_BUTTON_MUSIC_CONTROL,
         Settings.System.USE_OLD_MOBILETYPE,
