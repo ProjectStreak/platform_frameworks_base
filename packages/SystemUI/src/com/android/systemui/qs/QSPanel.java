@@ -132,6 +132,9 @@ public class QSPanel extends LinearLayout implements Callback, BrightnessMirrorL
 
     @Nullable
     protected View mFooter;
+	
+    @Nullable
+    protected View mDivider;
 
     @Nullable
     private ViewGroup mHeaderContainer;
@@ -239,6 +242,9 @@ public class QSPanel extends LinearLayout implements Callback, BrightnessMirrorL
                     Settings.System.QS_BRIGHTNESS_POSITION_BOTTOM),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QS_SHOW_BRIGHTNESS_ABOVE_FOOTER),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_SHOW_AUTO_BRIGHTNESS),
                     false, this, UserHandle.USER_ALL);
         }
@@ -256,7 +262,9 @@ public class QSPanel extends LinearLayout implements Callback, BrightnessMirrorL
                         Settings.System.QS_SHOW_BRIGHTNESS, 1,
                         UserHandle.USER_CURRENT) == 1);
             } else if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.QS_BRIGHTNESS_POSITION_BOTTOM))) {
+                    Settings.System.QS_BRIGHTNESS_POSITION_BOTTOM)) ||
+                    uri.equals(Settings.System.getUriFor(
+                    Settings.System.QS_SHOW_BRIGHTNESS_ABOVE_FOOTER))) {
                 updateBrightnessSliderPosition();
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.QS_SHOW_AUTO_BRIGHTNESS))) {
@@ -308,7 +316,6 @@ public class QSPanel extends LinearLayout implements Callback, BrightnessMirrorL
         mBrightnessIcon.setVisibility(View.VISIBLE);
         addView(mBrightnessView);
         mBrightnessController = new BrightnessController(getContext(),
-                brightnessIcon, findViewById(R.id.brightness_slider), mBroadcastDispatcher);
                 mBrightnessIcon, findViewById(R.id.brightness_slider), mBroadcastDispatcher);
     }
 
@@ -455,11 +462,14 @@ public class QSPanel extends LinearLayout implements Callback, BrightnessMirrorL
         setTiles(mHost.getTiles());
     }
 
-    @Override
     private int getBrightnessViewPositionBottom() {
+        boolean above = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.QS_SHOW_BRIGHTNESS_ABOVE_FOOTER, 0,
+                UserHandle.USER_CURRENT) == 1;
+        View seekView = above ? mFooter : mDivider;
         for (int i = 0; i < getChildCount(); i++) {
             View v = getChildAt(i);
-            if (v == mDivider) {
+            if (v == seekView) {
                 return i;
             }
         }
