@@ -283,12 +283,15 @@ public class QSPanel extends LinearLayout implements Callback, BrightnessMirrorL
 
 
     protected void onMediaVisibilityChanged(Boolean visible) {
-        switchTileLayout();
         mMediaVisible = visible;
-        updateMinRows();
+        switchTileLayout();
         if (mMediaVisibilityChangedListener != null) {
             mMediaVisibilityChangedListener.accept(visible);
         }
+    }
+
+    public boolean getMediaVisible() {
+        return mMediaVisible;
     }
 
     protected void addSecurityFooter() {
@@ -657,7 +660,6 @@ public class QSPanel extends LinearLayout implements Callback, BrightnessMirrorL
         if (newConfig.orientation != mLastOrientation) {
             mLastOrientation = newConfig.orientation;
             switchTileLayout();
-            updateMinRows();
         }
     }
 
@@ -672,7 +674,7 @@ public class QSPanel extends LinearLayout implements Callback, BrightnessMirrorL
         return switchTileLayout(false /* force */);
     }
 
-    private boolean switchTileLayout(boolean force) {
+    public boolean switchTileLayout(boolean force) {
         /** Whether or not the QuickQSPanel currently contains a media player. */
         boolean horizontal = shouldUseHorizontalLayout();
         if (horizontal != mUsingHorizontalLayout || force) {
@@ -712,8 +714,10 @@ public class QSPanel extends LinearLayout implements Callback, BrightnessMirrorL
             updateMediaHostContentMargins();
             updateHorizontalLinearLayoutMargins();
             updatePadding();
+            updateMinRows();
             return true;
         }
+        updateMinRows();
         return false;
     }
 
