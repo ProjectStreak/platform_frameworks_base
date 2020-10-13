@@ -78,6 +78,8 @@ public class FODCircleView extends ImageView {
     private boolean mIsCircleShowing;
 
     private Handler mHandler;
+    private FODAnimation mFODAnimation;
+    private boolean mIsRecognizingAnimEnabled;
 
     private final ImageView mPressedView;
 
@@ -118,6 +120,9 @@ public class FODCircleView extends ImageView {
         public void onKeyguardVisibilityChanged(boolean showing) {
             mIsKeyguard = showing;
             updatePosition();
+            if (mFODAnimation != null) {
+                mFODAnimation.setAnimationKeyguard(mIsKeyguard);
+            }
         }
 
         @Override
@@ -178,6 +183,7 @@ public class FODCircleView extends ImageView {
 
         mHandler = new Handler(Looper.getMainLooper());
 
+        mFODAnimation = new FODAnimation(context, mPositionX, mPositionY);
         mParams.height = mSize;
         mParams.width = mSize;
         mParams.format = PixelFormat.TRANSLUCENT;
@@ -223,14 +229,17 @@ public class FODCircleView extends ImageView {
 
         if (event.getAction() == MotionEvent.ACTION_DOWN && newIsInside) {
             showCircle();
+            mFODAnimation.showFODanimation();
             return true;
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
             hideCircle();
+            mFODAnimation.hideFODanimation();
             return true;
         } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
             return true;
         }
 
+        mFODAnimation.hideFODanimation();
         return false;
     }
 
@@ -303,6 +312,7 @@ public class FODCircleView extends ImageView {
         mPaintFingerprint.setColor(mColor);
         setImageDrawable(null);
         invalidate();
+
     }
 
     public void hideCircle() {
@@ -338,6 +348,11 @@ public class FODCircleView extends ImageView {
 
     private void updateAlpha() {
         setAlpha(mIsDreaming ? 0.5f : 1.0f);
+    }
+
+    private void updateStyle() {
+        mIsRecognizingAnimEnabled = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.FOD_RECOGNIZING_ANIMATION, 0) != 0;
     }
 
     private void updatePosition() {
