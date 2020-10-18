@@ -24,9 +24,6 @@
     <dimen name="net_traffic_multi_text_size">14dp</dimen>
     <dimen name="net_traffic_txt_img_padding">1dp</dimen>
 
-    <!-- Width of the battery icon in the status bar when set to circle style. -->
-    <dimen name="status_bar_battery_icon_circle_width">14.5dp</dimen>
-
     <!-- Largest size an avatar might need to be drawn in the power menu user picker -->
     <dimen name="global_actions_avatar_size">24dp</dimen>
 
