@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Advanced reboot -->
+    <string name="reboot_to_recovery_message">Uruchamiam ponownie do recovery</string>
+    <string name="reboot_to_bootloader_message">Uruchamiam ponownie do bootloadera</string>
+    <string name="reboot_title">Uruchom ponownie</string>
+    <string name="reboot_message">Uruchamiam ponownie</string>
+</resources>
