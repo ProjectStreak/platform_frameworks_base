@@ -5165,6 +5165,13 @@ public final class Settings {
         public static final String ALLOW_INCALL_HOME = "allow_incall_home";
 
         /**
+         * whether to enable or disable vibration on error fingerprint auth
+         *
+         * @hide
+         */
+        public static final String FINGERPRINT_ERROR_VIB = "fingerprint_error_vib";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
