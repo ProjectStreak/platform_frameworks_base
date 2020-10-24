@@ -224,6 +224,7 @@ public class SystemSettingsValidators {
         VALIDATORS.put(System.GAMING_MODE_MEDIA_ENABLED, BOOLEAN_VALIDATOR);
         VALIDATORS.put(System.GAMING_MODE_MEDIA, new InclusiveIntegerRangeValidator(0, 100));
         VALIDATORS.put(System.NOTIFICATION_HEADERS, BOOLEAN_VALIDATOR);
+        VALIDATORS.put(System.CENTER_NOTIFICATION_HEADERS, BOOLEAN_VALIDATOR);
         VALIDATORS.put(System.DOZE_ON_CHARGE, BOOLEAN_VALIDATOR);
         VALIDATORS.put(System.OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE, new InclusiveIntegerRangeValidator(4, 8));
         VALIDATORS.put(System.OMNI_QS_LAYOUT_COLUMNS, new InclusiveIntegerRangeValidator(3, 8));

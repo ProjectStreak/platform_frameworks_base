@@ -4876,6 +4876,12 @@ public final class Settings {
         public static final String NOTIFICATION_HEADERS = "notification_headers";
 
         /**
+         * whether to show center notification headers
+         * @hide
+         */
+        public static final String CENTER_NOTIFICATION_HEADERS = "center_notification_headers";
+
+        /**
          * Whether to enable DOZE only when charging
          * @hide
          */
@@ -5370,6 +5376,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(DEVICE_PROXI_CHECK_ENABLED);
             PRIVATE_SETTINGS.add(ALLOW_INCALL_HOME);
             PRIVATE_SETTINGS.add(BACK_GESTURE_HAPTIC);
+            PRIVATE_SETTINGS.add(CENTER_NOTIFICATION_HEADERS);
         }
 
         /**
