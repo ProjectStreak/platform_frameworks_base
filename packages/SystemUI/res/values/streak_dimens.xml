@@ -20,10 +20,6 @@
     <dimen name="horizontal_max_swift">3.0dp</dimen>
     <dimen name="vertical_max_swift">1.0dp</dimen>
 
-    <!-- Network traffic monitor -->
-    <dimen name="net_traffic_multi_text_size">14dp</dimen>
-    <dimen name="net_traffic_txt_img_padding">1dp</dimen>
-
     <!-- Largest size an avatar might need to be drawn in the power menu user picker -->
     <dimen name="global_actions_avatar_size">24dp</dimen>
 
