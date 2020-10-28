@@ -17,13 +17,6 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := frameworks-base-overlays
 LOCAL_REQUIRED_MODULES := \
-	AccentColorBlackOverlay \
-	AccentColorCinnamonOverlay \
-	AccentColorOceanOverlay \
-	AccentColorOrchidOverlay \
-	AccentColorSpaceOverlay \
-	AccentColorGreenOverlay \
-	AccentColorPurpleOverlay \
 	IconPackCircularAndroidOverlay \
 	IconPackCircularPixelLauncherOverlay \
 	IconPackCircularPixelThemePickerOverlay \
@@ -39,14 +32,6 @@ LOCAL_REQUIRED_MODULES := \
 	IconPackRoundedPixelThemePickerOverlay \
 	IconPackRoundedSettingsOverlay \
 	IconPackRoundedSystemUIOverlay \
-	IconShapePebbleOverlay \
-	IconShapeCircleOverlay \
-	IconShapeRoundedRectOverlay \
-	IconShapeSquareOverlay \
-	IconShapeSquircleOverlay \
-	IconShapeTaperedRectOverlay \
-	IconShapeTeardropOverlay \
-	IconShapeVesselOverlay \
 	NavigationBarMode2ButtonOverlay \
 	NavigationBarMode3ButtonOverlay \
 	NavigationBarModeGesturalOverlay \
