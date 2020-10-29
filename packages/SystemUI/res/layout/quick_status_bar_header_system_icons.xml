@@ -39,12 +39,9 @@
         android:textAppearance="@style/TextAppearance.StatusBar.Clock"
         systemui:showDark="false" />
 
-        <com.android.systemui.statusbar.policy.NetworkTraffic
-            android:id="@+id/networkTraffic"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="6dp"
-            android:singleLine="false"
-            systemui:showDark="false" />
+    <com.android.systemui.statusbar.policy.NetworkTraffic
+        android:id="@+id/networkTraffic"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
 
 </FrameLayout>
