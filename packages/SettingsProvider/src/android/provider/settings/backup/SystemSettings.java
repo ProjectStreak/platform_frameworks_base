@@ -97,7 +97,6 @@ public class SystemSettings {
         Settings.System.QS_LAYOUT_ROWS,
         Settings.System.OMNI_QS_TILE_TITLE_VISIBILITY,
         Settings.System.VOLUME_BUTTON_MUSIC_CONTROL,
-        Settings.System.USE_OLD_MOBILETYPE,
         Settings.System.BUTTON_BRIGHTNESS,
         Settings.System.BUTTON_BACKLIGHT_TIMEOUT,
         Settings.System.RINGTONE_VIBRATION_PATTERN,
