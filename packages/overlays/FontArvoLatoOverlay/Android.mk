@@ -1,5 +1,5 @@
 #
-#  Copyright 2019, The Android Open Source Project
+#  Copyright 2018, The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,13 +17,15 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_RRO_THEME := IconPackCircularPixelLauncher
-
+LOCAL_RRO_THEME := FontArvoLato
+LOCAL_CERTIFICATE := platform
 LOCAL_PRODUCT_MODULE := true
+
+LOCAL_SRC_FILES := $(call all-subdir-java-files)
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
 
-LOCAL_PACKAGE_NAME := IconPackCircularPixelLauncherOverlay
+LOCAL_PACKAGE_NAME := FontArvoLatoOverlay
 LOCAL_SDK_VERSION := current
 
 include $(BUILD_RRO_PACKAGE)

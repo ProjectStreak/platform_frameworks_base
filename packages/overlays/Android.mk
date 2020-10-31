@@ -18,20 +18,20 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := frameworks-base-overlays
 LOCAL_REQUIRED_MODULES := \
 	IconPackCircularAndroidOverlay \
-	IconPackCircularPixelLauncherOverlay \
-	IconPackCircularPixelThemePickerOverlay \
+	IconPackCircularLauncherOverlay \
 	IconPackCircularSettingsOverlay \
 	IconPackCircularSystemUIOverlay \
+	IconPackCircularThemePickerOverlay \
 	IconPackFilledAndroidOverlay \
-	IconPackFilledPixelLauncherOverlay \
-	IconPackFilledPixelThemePickerOverlay \
+	IconPackFilledLauncherOverlay \
 	IconPackFilledSettingsOverlay \
 	IconPackFilledSystemUIOverlay \
+	IconPackFilledThemePickerOverlay \
 	IconPackRoundedAndroidOverlay \
-	IconPackRoundedPixelLauncherOverlay \
-	IconPackRoundedPixelThemePickerOverlay \
+	IconPackRoundedLauncherOverlay \
 	IconPackRoundedSettingsOverlay \
 	IconPackRoundedSystemUIOverlay \
+	IconPackRoundedThemePickerOverlay \
 	NavigationBarMode2ButtonOverlay \
 	NavigationBarMode3ButtonOverlay \
 	NavigationBarModeGesturalOverlay \
