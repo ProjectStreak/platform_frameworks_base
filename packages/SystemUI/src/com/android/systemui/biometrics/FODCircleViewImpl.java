@@ -25,7 +25,7 @@ import com.android.systemui.SystemUI;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.CommandQueue.Callbacks;
 
-import com.android.internal.util.custom.FodUtils;
+import com.android.internal.util.streak.FodUtils;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

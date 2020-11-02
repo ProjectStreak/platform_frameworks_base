@@ -81,7 +81,7 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
-import com.android.internal.util.custom.OverlayUtils;
+import com.android.internal.util.streak.OverlayUtils;
 
 /**
  * Keeps track of information about all installed applications, lazy-loading
