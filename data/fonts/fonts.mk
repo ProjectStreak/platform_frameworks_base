@@ -16,4 +16,5 @@
 
 PRODUCT_PACKAGES := \
     DroidSansMono.ttf \
-    AndroidClock.ttf
+    AndroidClock.ttf \
+    fonts.xml
