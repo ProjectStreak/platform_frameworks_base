@@ -81,7 +81,4 @@
   <!-- Whether device supports internal audio recording -->
   <java-symbol type="bool" name="config_hasInternalAudioRecordingSupport" />
 
-  <!-- Ambiant Pulse Light -->
-  <java-symbol type="integer" name="config_ambientNotificationDefaultColor" />
-
 </resources>
