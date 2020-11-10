@@ -102,7 +102,7 @@ public class SystemSettings {
         Settings.System.BUTTON_BACKLIGHT_TIMEOUT,
         Settings.System.RINGTONE_VIBRATION_PATTERN,
         Settings.System.SMART_SPACE,
-        Settings.System.COLOR_BUCKET_OVERLAY
+        Settings.System.COLOR_BUCKET_OVERLAY,
         Settings.System.NOTIFICATION_PULSE,
         Settings.System.AOD_NOTIFICATION_PULSE,
         Settings.System.AOD_NOTIFICATION_PULSE_CLEAR,
@@ -110,6 +110,6 @@ public class SystemSettings {
         Settings.System.NOTIFICATION_PULSE_COLOR,
         Settings.System.NOTIFICATION_PULSE_REPEATS,
         Settings.System.AOD_NOTIFICATION_PULSE_TIMEOUT,
-        Settings.System.NOTIFICATION_PULSE_DURATION,
+        Settings.System.NOTIFICATION_PULSE_DURATION
     };
 }
