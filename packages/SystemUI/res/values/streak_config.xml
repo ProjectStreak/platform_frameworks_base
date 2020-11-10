@@ -25,10 +25,6 @@
     <!-- Whether to show VoLTE icon in the status bar -->
     <bool name="config_display_volte">true</bool>
 
-    <!-- Max visible notification icons -->
-    <integer name="config_maxVisibleNotificationIcons">4</integer>
-    <integer name="config_maxVisibleNotificationIconsOnLock">5</integer>
-
     <!-- Navbar -->
     <string name="config_navBarLayoutHandleArrows" translatable="false">back[1.7WC];home_handle;ime_switcher[1.7WC]</string>
 

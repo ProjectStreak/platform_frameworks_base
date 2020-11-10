@@ -68,4 +68,8 @@
   <!-- Whether device has VOOC charging support -->
   <java-symbol type="bool" name="config_hasVoocCharger" />
 
+    <!-- Max visible notification icons -->
+    <java-symbol type="integer" name="config_maxVisibleNotificationIcons" />
+    <java-symbol type="integer" name="config_maxVisibleNotificationIconsOnLock" />
+
 </resources>
