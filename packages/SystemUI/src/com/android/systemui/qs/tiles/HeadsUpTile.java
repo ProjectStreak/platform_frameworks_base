@@ -38,6 +38,8 @@ public class HeadsUpTile extends QSTileImpl<BooleanState> {
 
     private final GlobalSetting mSetting;
 
+   private final Icon mIcon = ResourceIcon.get(R.drawable.ic_qs_heads_up);
+
     @Inject
     public HeadsUpTile(QSHost host) {
         super(host);
@@ -79,17 +81,17 @@ public class HeadsUpTile extends QSTileImpl<BooleanState> {
 
     @Override
     protected void handleUpdateState(BooleanState state, Object arg) {
+        state.icon = mIcon;
+
         final int value = arg instanceof Integer ? (Integer)arg : mSetting.getValue();
         final boolean headsUp = value != 0;
         state.value = headsUp;
         state.label = mContext.getString(R.string.quick_settings_heads_up_label);
         if (headsUp) {
-            state.icon = ResourceIcon.get(R.drawable.ic_qs_heads_up_on);
             state.contentDescription =  mContext.getString(
                     R.string.accessibility_quick_settings_heads_up_on);
             state.state = Tile.STATE_ACTIVE;
         } else {
-            state.icon = ResourceIcon.get(R.drawable.ic_qs_heads_up_off);
             state.contentDescription =  mContext.getString(
                     R.string.accessibility_quick_settings_heads_up_off);
             state.state = Tile.STATE_INACTIVE;
