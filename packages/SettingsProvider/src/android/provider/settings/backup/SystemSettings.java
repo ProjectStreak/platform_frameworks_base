@@ -88,5 +88,8 @@ public class SystemSettings {
         Settings.System.DOUBLE_TAP_SLEEP_GESTURE,
         Settings.System.OMNI_ADVANCED_REBOOT,
         Settings.System.LOCKSCREEN_SMALL_CLOCK,
+        Settings.System.KEYGUARD_MEDIA_ART,
+        Settings.System.KEYGUARD_MEDIA_ART_ENABLE_BLUR,
+        Settings.System.KEYGUARD_MEDIA_ART_BLUR_RADIUS,
     };
 }
