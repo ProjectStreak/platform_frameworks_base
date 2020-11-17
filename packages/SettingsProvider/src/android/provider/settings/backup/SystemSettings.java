@@ -102,10 +102,6 @@ public class SystemSettings {
         Settings.System.BUTTON_BRIGHTNESS,
         Settings.System.BUTTON_BACKLIGHT_TIMEOUT,
         Settings.System.RINGTONE_VIBRATION_PATTERN,
-        Settings.System.QS_SHOW_BRIGHTNESS,
-        Settings.System.QS_BRIGHTNESS_POSITION_BOTTOM,
-        Settings.System.QS_SHOW_BRIGHTNESS_ABOVE_FOOTER,
-        Settings.System.QS_SHOW_AUTO_BRIGHTNESS,
         Settings.System.SMART_SPACE,
         Settings.System.COLOR_BUCKET_OVERLAY
     };
