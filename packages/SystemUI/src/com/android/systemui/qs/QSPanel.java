@@ -148,7 +148,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     private Consumer<Boolean> mMediaVisibilityChangedListener;
     private boolean mMediaVisible;
 
-
     @Inject
     public QSPanel(
             @Named(VIEW_CONTEXT) Context context,
@@ -215,9 +214,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     }
 
     protected void onMediaVisibilityChanged(Boolean visible) {
-        mMediaVisible = visible;
         switchTileLayout();
-        updateBrightnessSliderPosition();
         if (mMediaVisibilityChangedListener != null) {
             mMediaVisibilityChangedListener.accept(visible);
         }
@@ -392,21 +389,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         view.setVisibility(TunerService.parseIntegerSwitch(newValue, true) ? VISIBLE : GONE);
     }
 
-    private void updateMinRows() {
-        if (getTileLayout() == null) {
-            return;
-        }
-        if (!mMediaVisible) {
-            int rows = Settings.System.getIntForUser(
-                    mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS, 3,
-                    UserHandle.USER_CURRENT);
-            boolean isPortrait = mContext.getResources().getConfiguration().orientation
-                    == Configuration.ORIENTATION_PORTRAIT;
-            getTileLayout().setMinRows(isPortrait ? rows : 1);
-        } else {
-            getTileLayout().setMinRows(2);
-        }
-    }
+
 
     public void openDetails(String subPanel) {
         QSTile tile = getTile(subPanel);
@@ -590,10 +573,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
             updateMediaHostContentMargins();
             updateHorizontalLinearLayoutMargins();
             updatePadding();
-            updateMinRows();
             return true;
         }
-        updateMinRows();
         return false;
     }
 
@@ -1245,7 +1226,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
                 configureTile(r.tile, r.tileView);
             }
         }
-        updateMinRows();
     }
 
     public int getNumColumns() {

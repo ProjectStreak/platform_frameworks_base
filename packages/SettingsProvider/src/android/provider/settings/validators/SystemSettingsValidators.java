@@ -228,7 +228,6 @@ public class SystemSettingsValidators {
         VALIDATORS.put(System.DOZE_ON_CHARGE, BOOLEAN_VALIDATOR);
         VALIDATORS.put(System.OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE, new InclusiveIntegerRangeValidator(4, 8));
         VALIDATORS.put(System.OMNI_QS_LAYOUT_COLUMNS, new InclusiveIntegerRangeValidator(3, 8));
-        VALIDATORS.put(System.QS_LAYOUT_ROWS, new InclusiveIntegerRangeValidator(2, 3));
         VALIDATORS.put(System.OMNI_QS_TILE_TITLE_VISIBILITY, BOOLEAN_VALIDATOR);
         VALIDATORS.put(System.VOLUME_BUTTON_MUSIC_CONTROL, BOOLEAN_VALIDATOR);
         VALIDATORS.put(System.BUTTON_BRIGHTNESS, NON_NEGATIVE_INTEGER_VALIDATOR);
