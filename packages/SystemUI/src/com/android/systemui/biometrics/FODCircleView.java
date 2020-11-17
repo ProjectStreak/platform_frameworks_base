@@ -120,8 +120,6 @@ public class FODCircleView extends ImageView {
 
         @Override
         public void onKeyguardVisibilityChanged(boolean showing) {
-            mIsKeyguard = showing;
-            updatePosition();
             if (mFODAnimation != null) {
                 mFODAnimation.setAnimationKeyguard(mIsKeyguard);
             }
@@ -394,11 +392,6 @@ public class FODCircleView extends ImageView {
 
         mPressedParams.x = mParams.x = x;
         mPressedParams.y = mParams.y = y;
-
-        if (mIsKeyguard) {
-            mParams.x = mPositionX;
-            mParams.y = mPositionY;
-        }
 
         if (mIsDreaming) {
             mParams.x += mDreamingOffsetX;
