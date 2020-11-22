@@ -25,7 +25,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
-import android.hardware.biometrics.BiometricSourceType;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.RemoteException;
@@ -79,8 +78,6 @@ public class FODCircleView extends ImageView {
     private boolean mIsCircleShowing;
 
     private Handler mHandler;
-    private FODAnimation mFODAnimation;
-    private boolean mIsRecognizingAnimEnabled;
 
     private final ImageView mPressedView;
 
@@ -120,9 +117,6 @@ public class FODCircleView extends ImageView {
 
         @Override
         public void onKeyguardVisibilityChanged(boolean showing) {
-            if (mFODAnimation != null) {
-                mFODAnimation.setAnimationKeyguard(mIsKeyguard);
-            }
         }
 
         @Override
@@ -142,15 +136,6 @@ public class FODCircleView extends ImageView {
         @Override
         public void onScreenTurnedOff() {
             hideCircle();
-        }
-
-        @Override
-        public void onBiometricHelp(int msgId, String helpString,
-                BiometricSourceType biometricSourceType) {
-            if (msgId == -1){ // Auth error
-                hideCircle();
-                mHandler.post(() -> mFODAnimation.hideFODanimation());
-            }
         }
     };
 
@@ -192,7 +177,6 @@ public class FODCircleView extends ImageView {
 
         mHandler = new Handler(Looper.getMainLooper());
 
-        mFODAnimation = new FODAnimation(context, mPositionX, mPositionY);
         mParams.height = mSize;
         mParams.width = mSize;
         mParams.format = PixelFormat.TRANSLUCENT;
@@ -238,19 +222,14 @@ public class FODCircleView extends ImageView {
 
         if (event.getAction() == MotionEvent.ACTION_DOWN && newIsInside) {
             showCircle();
-            mIsRecognizingAnimEnabled = Settings.System.getInt(mContext.getContentResolver(),
-            Settings.System.FOD_RECOGNIZING_ANIMATION, 0) != 0;
-            if (mIsRecognizingAnimEnabled) mFODAnimation.showFODanimation();
             return true;
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
             hideCircle();
-            mFODAnimation.hideFODanimation();
             return true;
         } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
             return true;
         }
 
-        mFODAnimation.hideFODanimation();
         return false;
     }
 
@@ -323,7 +302,6 @@ public class FODCircleView extends ImageView {
         mPaintFingerprint.setColor(mColor);
         setImageDrawable(null);
         invalidate();
-
     }
 
     public void hideCircle() {
