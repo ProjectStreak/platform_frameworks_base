@@ -2107,13 +2107,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         mUserSetup = userSetup;
     }
 
-    @Override
-    public void setBlockedGesturalNavigation(boolean blocked) {
-        if (getNavigationBarView() != null) {
-            getNavigationBarView().setBlockedGesturalNavigation(blocked);
-        }
-    }
-
     private CustomSettingsObserver mCustomSettingsObserver = new CustomSettingsObserver(mHandler);
     private class CustomSettingsObserver extends ContentObserver {
 

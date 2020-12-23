@@ -24,8 +24,6 @@ import static android.view.WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_M
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
-import android.animation.LayoutTransition;
-import android.animation.LayoutTransition.TransitionListener;
 import android.animation.ValueAnimator;
 import android.annotation.Nullable;
 import android.annotation.SuppressLint;
@@ -63,7 +61,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.RemoteException;
-import android.os.ServiceManager;
 import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -92,7 +89,6 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.internal.logging.UiEventLogger;
-import com.android.internal.statusbar.IStatusBarService;
 import com.android.systemui.R;
 import com.android.systemui.dagger.qualifiers.Main;
 import com.android.systemui.dagger.qualifiers.UiBackground;
@@ -213,7 +209,6 @@ public class GlobalScreenshot implements ViewTreeObserver.OnComputeInternalInset
     private final DisplayMetrics mDisplayMetrics;
 
     private View mScreenshotLayout;
-    private LinearLayout mScreenshotButtonsLayout;
     private ScreenshotSelectorView mScreenshotSelectorView;
     private ImageView mScreenshotAnimatedView;
     private ImageView mScreenshotPreview;
@@ -222,8 +217,6 @@ public class GlobalScreenshot implements ViewTreeObserver.OnComputeInternalInset
     private HorizontalScrollView mActionsContainer;
     private LinearLayout mActionsView;
     private ImageView mBackgroundProtection;
-    private View mCaptureButton;
-    private View mCancelButton;
     private FrameLayout mDismissButton;
 
     private Bitmap mScreenBitmap;
@@ -550,7 +543,6 @@ public class GlobalScreenshot implements ViewTreeObserver.OnComputeInternalInset
 
         // Inflate the screenshot layout
         mScreenshotLayout = LayoutInflater.from(mContext).inflate(R.layout.global_screenshot, null);
-        mScreenshotButtonsLayout = mScreenshotLayout.findViewById(R.id.global_screenshot_buttons);
         // TODO(159460485): Remove this when focus is handled properly in the system
         mScreenshotLayout.setOnTouchListener((v, event) -> {
             if (event.getActionMasked() == MotionEvent.ACTION_OUTSIDE) {
@@ -608,8 +600,6 @@ public class GlobalScreenshot implements ViewTreeObserver.OnComputeInternalInset
         mActionsView = mScreenshotLayout.findViewById(R.id.global_screenshot_actions);
         mBackgroundProtection = mScreenshotLayout.findViewById(
                 R.id.global_screenshot_actions_background);
-        mCaptureButton = mScreenshotLayout.findViewById(R.id.global_screenshot_selector_capture);
-        mCancelButton = mScreenshotLayout.findViewById(R.id.global_screenshot_selector_cancel);
         mDismissButton = mScreenshotLayout.findViewById(R.id.global_screenshot_dismiss_button);
         mDismissButton.setOnClickListener(view -> {
             mUiEventLogger.log(ScreenshotEvent.SCREENSHOT_EXPLICIT_DISMISSAL);
@@ -635,11 +625,6 @@ public class GlobalScreenshot implements ViewTreeObserver.OnComputeInternalInset
      * Takes a screenshot of the current display and shows an animation.
      */
     private void takeScreenshotInternal(Consumer<Uri> finisher, Rect crop) {
-        if (mScreenshotLayout.getParent() != null) {
-            finisher.accept(null);
-            return;
-        }
-
         // Dismiss the old screenshot first to prevent it from showing up in the new screenshot
         dismissScreenshot("new screenshot requested", true);
 
@@ -705,18 +690,6 @@ public class GlobalScreenshot implements ViewTreeObserver.OnComputeInternalInset
 
         // Start the post-screenshot animation
         startAnimation(finisher, screenRect, screenInsets, showFlash);
-    }
-
-    void setBlockedGesturalNavigation(boolean blocked) {
-        IStatusBarService service = IStatusBarService.Stub.asInterface(
-                ServiceManager.getService(Context.STATUS_BAR_SERVICE));
-        if (service != null) {
-            try {
-                service.setBlockedGesturalNavigation(blocked);
-            } catch (RemoteException e) {
-                // end of the world
-            }
-        }
     }
 
     /**
