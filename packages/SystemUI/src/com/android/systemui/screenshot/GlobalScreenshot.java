@@ -698,11 +698,10 @@ public class GlobalScreenshot implements ViewTreeObserver.OnComputeInternalInset
      */
     private void saveScreenshotAndToast(Consumer<Uri> finisher) {
         // Play the shutter sound to notify that we've taken a screenshot
-        mScreenshotHandler.post(() -> {
-                // Play the shutter sound to notify that we've taken a screenshot
-                if (Settings.System.getInt(mContext.getContentResolver(), Settings.System.SCREENSHOT_SOUND, 1) == 1)
+        if (Settings.System.getInt(mContext.getContentResolver(), Settings.System.SCREENSHOT_SOUND, 1) == 1)
+            mScreenshotHandler.post(() -> {
                 mCameraSound.play(MediaActionSound.SHUTTER_CLICK);
-    });
+            });
 
         saveScreenshotInWorkerThread(finisher, new ActionsReadyListener() {
             @Override
@@ -757,7 +756,8 @@ public class GlobalScreenshot implements ViewTreeObserver.OnComputeInternalInset
                 });
 
                 // Play the shutter sound to notify that we've taken a screenshot
-                mCameraSound.play(MediaActionSound.SHUTTER_CLICK);
+                if (Settings.System.getInt(mContext.getContentResolver(), Settings.System.SCREENSHOT_SOUND, 1) == 1)
+                    mCameraSound.play(MediaActionSound.SHUTTER_CLICK);
 
                 mScreenshotPreview.setLayerType(View.LAYER_TYPE_HARDWARE, null);
                 mScreenshotPreview.buildLayer();
