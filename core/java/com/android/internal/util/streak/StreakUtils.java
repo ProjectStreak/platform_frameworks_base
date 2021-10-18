@@ -22,7 +22,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.hardware.fingerprint.FingerprintManager;
-import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.SystemProperties;
 
@@ -32,9 +31,7 @@ public class StreakUtils {
 
     // Check to see if device is WiFi only
     public static boolean isWifiOnly(Context context) {
-        ConnectivityManager cm = (ConnectivityManager)context.getSystemService(
-                Context.CONNECTIVITY_SERVICE);
-        return (cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE) == false);
+        return !context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
     }
 
     // Check to see if a package is installed
