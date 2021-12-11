@@ -47,12 +47,13 @@ import android.os.UserManager;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.ArrayMap;
-import com.android.systemui.theme.ColorScheme;
+import com.android.systemui.theme.ColorSchemeMain;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.concurrent.Executor;
 import android.util.Log;
+import com.streak.support.monet.ColorScheme;
 
 import androidx.annotation.NonNull;
 
@@ -410,13 +411,11 @@ public class ThemeOverlayController extends SystemUI implements Dumpable {
      * Return the main theme color from a given {@link WallpaperColors} instance.
      */
     protected int getNeutralColor(@NonNull WallpaperColors wallpaperColors) {
-        ColorScheme colorScheme = new ColorScheme(context);
-        return colorScheme.getN2MAIN();
+        return ColorScheme.getSeedColor(wallpaperColors);
     }
 
     protected int getAccentColor(@NonNull WallpaperColors wallpaperColors) { 
-        ColorScheme colorScheme = new ColorScheme(context);
-        return colorScheme.getAccent1MAIN();
+        return ColorScheme.getSeedColor(wallpaperColors);
     }
 
     private final boolean inDarkMode() {
@@ -428,7 +427,7 @@ public class ThemeOverlayController extends SystemUI implements Dumpable {
      * Given a color candidate, return an overlay definition.
      */
     protected @Nullable FabricatedOverlay getOverlay(int color, int type) {
-        ColorScheme colorScheme = new ColorScheme(context);
+        ColorSchemeMain colorScheme = new ColorSchemeMain(context, color);
         List<Integer> colorList = type == ACCENT
                 ? colorScheme.getAllAccentColors() : colorScheme.getAllNeutralColors();
         String name = type == ACCENT ? "accent" : "neutral";

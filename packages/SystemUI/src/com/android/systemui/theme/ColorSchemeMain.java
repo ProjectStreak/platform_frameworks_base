@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public final class ColorScheme {
+public final class ColorSchemeMain {
     private final List<Integer> accent1;
     private final List<Integer> accent2;
     private final List<Integer> accent3;
@@ -21,8 +21,8 @@ public final class ColorScheme {
     Integer[] iArr4 = new Integer[12];
     Integer[] iArr5 = new Integer[12];
 
-    public ColorScheme(Context context) {
-        colorgiber cg = new colorgiber(context);
+    public ColorSchemeMain(Context context, int color) {
+        colorgiber cg = new colorgiber(context, color);
         for (int i = 0; i < 12; i++) {
             iArr1[i] = cg.noSysPriviledgeMoment(1, i);
             iArr2[i] = cg.noSysPriviledgeMoment(2, i);
