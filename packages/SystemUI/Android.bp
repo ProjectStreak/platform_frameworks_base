@@ -61,6 +61,7 @@ android_library {
         "res-product",
         "res-keyguard",
         "res-smartspace",
+        "res-gamedashboard",
         "res",
     ],
     static_libs: [
@@ -99,6 +100,7 @@ android_library {
         "VendorSupportLib"
         "backgesture-google",
         "smartspace-google",
+        "gamedashboard-sysui-google",
     ],
     manifest: "AndroidManifest.xml",
 
