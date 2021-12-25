@@ -7,6 +7,7 @@ import com.android.systemui.dagger.SystemUIBinder;
 import com.android.systemui.dagger.SysUIComponent;
 import com.android.systemui.dagger.SystemUIModule;
 
+import com.streak.android.systemui.gamedashboard.GameDashboardModule;
 import com.streak.android.systemui.keyguard.KeyguardSliceProviderStreak;
 import com.streak.android.systemui.smartspace.KeyguardSmartspaceController;
 
@@ -16,8 +17,9 @@ import dagger.Subcomponent;
 @Subcomponent(modules = {
         DefaultComponentBinder.class,
         DependencyProvider.class,
-        SystemUIBinder.class,
+        GameDashboardModule.class,
         SystemUIModule.class,
+        SystemUIStreakBinder.class,
         SystemUIStreakModule.class})
 public interface SysUIComponentStreak extends SysUIComponent {
     @SysUISingleton
