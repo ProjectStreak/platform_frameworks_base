@@ -7,6 +7,9 @@ import com.android.systemui.dagger.SystemUIBinder;
 import com.android.systemui.dagger.SysUIComponent;
 import com.android.systemui.dagger.SystemUIModule;
 
+import com.streak.android.systemui.keyguard.StreakKeyguardSliceProvider;
+import com.streak.android.systemui.smartspace.KeyguardSmartspaceController;
+
 import dagger.Subcomponent;
 
 @SysUISingleton
@@ -22,4 +25,12 @@ public interface StreakSysUIComponent extends SysUIComponent {
     interface Builder extends SysUIComponent.Builder {
         StreakSysUIComponent build();
     }
+
+    /**
+     * Member injection into the supplied argument.
+     */
+    void inject(StreakKeyguardSliceProvider keyguardSliceProvider);
+
+    @SysUISingleton
+    KeyguardSmartspaceController createKeyguardSmartspaceController();
 }
