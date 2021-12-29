@@ -413,7 +413,7 @@
 
     <!-- The height of the quick settings footer that holds the user switcher, settings icon,
          etc. -->
-    <dimen name="qs_footer_height">96dp</dimen>
+    <dimen name="qs_footer_height">50dp</dimen>
 
     <!-- The size of each of the icon buttons in the QS footer -->
     <dimen name="qs_footer_action_button_size">48dp</dimen>

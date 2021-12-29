@@ -161,7 +161,7 @@ public class QSFooterViewController extends ViewController<QSFooterView> impleme
         mEdit = mView.findViewById(android.R.id.edit);
         mPageIndicator = mView.findViewById(R.id.footer_page_indicator);
         mPowerMenuLite = mView.findViewById(R.id.pm_lite);
-        mShowPMLiteButton = showPMLiteButton;
+        mShowPMLiteButton = false;
         mGlobalActionsDialog = globalActionsDialog;
         mUiEventLogger = uiEventLogger;
     }
