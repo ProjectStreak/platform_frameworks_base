@@ -45,7 +45,6 @@ import com.android.systemui.R;
  */
 public class QSFooterView extends FrameLayout {
     private PageIndicator mPageIndicator;
-    private TextView mBuildText;
     private View mActionsContainer;
 
     protected TouchAnimator mFooterAnimator;
@@ -54,8 +53,6 @@ public class QSFooterView extends FrameLayout {
     private boolean mExpanded;
     private float mExpansionAmount;
 
-    private boolean mShouldShowBuildText;
-
     private OnClickListener mExpandClickListener;
 
     private final ContentObserver mDeveloperSettingsObserver = new ContentObserver(
@@ -63,7 +60,6 @@ public class QSFooterView extends FrameLayout {
         @Override
         public void onChange(boolean selfChange, Uri uri) {
             super.onChange(selfChange, uri);
-            setBuildText();
         }
     };
 
@@ -76,18 +72,9 @@ public class QSFooterView extends FrameLayout {
         super.onFinishInflate();
         mPageIndicator = findViewById(R.id.footer_page_indicator);
         mActionsContainer = requireViewById(R.id.qs_footer_actions);
-        mBuildText = findViewById(R.id.build);
 
         updateResources();
         setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_YES);
-        setBuildText();
-    }
-
-    private void setBuildText() {
-        if (mBuildText == null) return;
-        mBuildText.setText(null);
-        mShouldShowBuildText = false;
-        mBuildText.setSelected(false);
     }
 
     void updateExpansion() {
@@ -116,7 +103,6 @@ public class QSFooterView extends FrameLayout {
         TouchAnimator.Builder builder = new TouchAnimator.Builder()
                 .addFloat(mActionsContainer, "alpha", 0, 1)
                 .addFloat(mPageIndicator, "alpha", 0, 1)
-                .addFloat(mBuildText, "alpha", 0, 1)
                 .setStartDelay(0.9f);
         return builder.build();
     }
@@ -192,10 +178,8 @@ public class QSFooterView extends FrameLayout {
     }
 
     private void updateClickabilities() {
-        mBuildText.setLongClickable(mBuildText.getVisibility() == View.VISIBLE);
     }
 
     private void updateVisibilities() {
-        mBuildText.setVisibility(mExpanded && mShouldShowBuildText ? View.VISIBLE : View.INVISIBLE);
     }
 }
