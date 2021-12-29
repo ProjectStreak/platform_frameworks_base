@@ -54,7 +54,6 @@ public class QSFooterView extends FrameLayout {
     private SettingsButton mSettingsButton;
     protected View mSettingsContainer;
     private PageIndicator mPageIndicator;
-    private TextView mBuildText;
     private boolean mShouldShowBuildText;
 
     private boolean mQsDisabled;
@@ -83,7 +82,6 @@ public class QSFooterView extends FrameLayout {
         @Override
         public void onChange(boolean selfChange, Uri uri) {
             super.onChange(selfChange, uri);
-            setBuildText();
         }
     };
 
@@ -105,7 +103,6 @@ public class QSFooterView extends FrameLayout {
         mMultiUserAvatar = mMultiUserSwitch.findViewById(R.id.multi_user_avatar);
 
         mActionsContainer = requireViewById(R.id.qs_footer_actions_container);
-        mBuildText = findViewById(R.id.build);
         mTunerIcon = requireViewById(R.id.tuner_icon);
 
         // RenderThread is doing more harm than good when touching the header (to expand quick
@@ -116,14 +113,6 @@ public class QSFooterView extends FrameLayout {
         updateResources();
 
         setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_YES);
-        setBuildText();
-    }
-
-    private void setBuildText() {
-        if (mBuildText == null) return;
-        mBuildText.setText(null);
-        mShouldShowBuildText = false;
-        mBuildText.setSelected(false);
     }
 
     void updateAnimator(int width, int numTiles) {
@@ -172,7 +161,6 @@ public class QSFooterView extends FrameLayout {
         TouchAnimator.Builder builder = new TouchAnimator.Builder()
                 .addFloat(mActionsContainer, "alpha", 0, 1)
                 .addFloat(mPageIndicator, "alpha", 0, 1)
-                .addFloat(mBuildText, "alpha", 0, 1)
                 .setStartDelay(0.9f);
         return builder.build();
     }
@@ -261,7 +249,6 @@ public class QSFooterView extends FrameLayout {
         mMultiUserSwitch.setClickable(mMultiUserSwitch.getVisibility() == View.VISIBLE);
         mEdit.setClickable(mEdit.getVisibility() == View.VISIBLE);
         mSettingsButton.setClickable(mSettingsButton.getVisibility() == View.VISIBLE);
-        mBuildText.setLongClickable(mBuildText.getVisibility() == View.VISIBLE);
     }
 
     private void updateVisibilities(boolean isTunerEnabled, boolean multiUserEnabled) {
@@ -272,7 +259,6 @@ public class QSFooterView extends FrameLayout {
                 showUserSwitcher(multiUserEnabled) ? View.VISIBLE : View.GONE);
         mSettingsButton.setVisibility(isDemo || !mExpanded ? View.INVISIBLE : View.VISIBLE);
 
-        mBuildText.setVisibility(mExpanded && mShouldShowBuildText ? View.VISIBLE : View.INVISIBLE);
     }
 
     private boolean showUserSwitcher(boolean multiUserEnabled) {
