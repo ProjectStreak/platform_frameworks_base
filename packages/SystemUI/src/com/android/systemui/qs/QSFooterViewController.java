@@ -130,6 +130,29 @@ public class QSFooterViewController extends ViewController<QSFooterView> impleme
         }
     };
 
+    private final View.OnLongClickListener mSettingsOnLongClickListener = new View.OnLongClickListener() {
+        @Override
+        public boolean onLongClick(View v) {
+            // Don't do anything until views are unhidden. Don't do anything if the tap looks
+            // suspicious.
+            if (!mExpanded || mFalsingManager.isFalseTap(FalsingManager.LOW_PENALTY)) {
+                return false;
+            }
+
+            if (v == mSettingsButton) {
+                if (!mDeviceProvisionedController.isCurrentUserSetup()) {
+                    // If user isn't setup just unlock the device and dump them back at SUW.
+                    mActivityStarter.postQSRunnableDismissingKeyguard(() -> {
+                    });
+                    return true;
+                }
+                startStreakTweaksActivity();
+                return true;
+            }
+            return false;
+        }
+    };
+
     private boolean mListening;
     private boolean mExpanded;
 
@@ -185,6 +208,7 @@ public class QSFooterViewController extends ViewController<QSFooterView> impleme
                         mView.updateAnimator(
                                 right - left, mQuickQSPanelController.getNumQuickTiles()));
         mSettingsButton.setOnClickListener(mSettingsOnClickListener);
+        mSettingsButton.setOnLongClickListener(mSettingsOnLongClickListener);
 
         mEdit.setOnClickListener(view -> {
             if (mFalsingManager.isFalseTap(FalsingManager.LOW_PENALTY)) {
@@ -261,6 +285,15 @@ public class QSFooterViewController extends ViewController<QSFooterView> impleme
                         mSettingsButtonContainer,
                         InteractionJankMonitor.CUJ_SHADE_APP_LAUNCH_FROM_SETTINGS_BUTTON) : null;
         mActivityStarter.startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS),
+                true /* dismissShade */, animationController);
+    }
+
+    private void startStreakTweaksActivity() {
+        ActivityLaunchAnimator.Controller animationController =
+                mSettingsButtonContainer != null ? ActivityLaunchAnimator.Controller.fromView(
+                        mSettingsButtonContainer,
+                        InteractionJankMonitor.CUJ_SHADE_APP_LAUNCH_FROM_SETTINGS_BUTTON) : null;
+        mActivityStarter.startActivity(new Intent("com.android.settings.STREAK_TWEAKS"),
                 true /* dismissShade */, animationController);
     }
 
