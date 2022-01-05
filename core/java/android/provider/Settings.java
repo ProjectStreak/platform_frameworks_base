@@ -5220,6 +5220,18 @@ public final class Settings {
         public static final String OMNI_ADVANCED_REBOOT = "advanced_reboot";
 
         /**
+         * Whether to enable custom themes or not
+         * @hide
+         */
+        public static final String MONET_CUSTOM_THEME = "monet_custom_themes";
+
+        /**
+         * Custom seed color for monet
+         * @hide
+         */
+        public static final String MONET_CUSTOM_COLOR = "monet_custom_color";
+
+        /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate
