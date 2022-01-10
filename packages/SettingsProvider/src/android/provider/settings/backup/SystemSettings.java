@@ -88,5 +88,6 @@ public class SystemSettings {
         Settings.System.DOUBLE_TAP_SLEEP_GESTURE,
         Settings.System.OMNI_ADVANCED_REBOOT,
         Settings.System.LOCKSCREEN_SMALL_CLOCK,
+        Settings.System.ENABLE_RIPPLE_EFFECT,
     };
 }
