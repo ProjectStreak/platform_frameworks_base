@@ -22,13 +22,13 @@ public final class ColorSchemeMain {
     Integer[] iArr5 = new Integer[12];
 
     public ColorSchemeMain(Context context, int color) {
-        colorgiber cg = new colorgiber(context, color);
+        colorgiber cg = new colorgiber(color);
         for (int i = 0; i < 12; i++) {
-            iArr1[i] = cg.noSysPriviledgeMoment(1, i);
-            iArr2[i] = cg.noSysPriviledgeMoment(2, i);
-            iArr3[i] = cg.noSysPriviledgeMoment(3, i);
-            iArr4[i] = cg.noSysPriviledgeMoment(4, i);
-            iArr5[i] = cg.noSysPriviledgeMoment(5, i);
+            iArr1[i] = cg.getMonColor(1, i);
+            iArr2[i] = cg.getMonColor(2, i);
+            iArr3[i] = cg.getMonColor(3, i);
+            iArr4[i] = cg.getMonColor(4, i);
+            iArr5[i] = cg.getMonColor(5, i);
         }
         accent1 = Arrays.asList(iArr1);
         accent2 = Arrays.asList(iArr2);
