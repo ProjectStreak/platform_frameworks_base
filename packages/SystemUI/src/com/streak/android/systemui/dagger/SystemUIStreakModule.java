@@ -17,7 +17,6 @@ import com.google.android.systemui.smartspace.KeyguardZenAlarmViewController;
 import com.google.android.systemui.smartspace.SmartSpaceController;
 
 import com.streak.android.systemui.smartspace.KeyguardSmartspaceController;
-import com.streak.android.systemui.theme.ThemeOverlayControllerStreak;
 
 import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.keyguard.KeyguardViewController;
@@ -204,9 +203,6 @@ public abstract class SystemUIStreakModule {
 
     @Binds
     abstract DozeHost provideDozeHost(DozeServiceHost dozeServiceHost);
-
-    @Binds
-    abstract ThemeOverlayController provideThemeOverlayController(ThemeOverlayControllerStreak themeOverlayController);
 
     // Google
     @Provides

@@ -32,8 +32,6 @@ import com.android.systemui.dagger.SysUISingleton;
 
 import com.google.android.systemui.gamedashboard.GameMenuActivity;
 
-import com.streak.android.systemui.theme.ThemeOverlayControllerStreak;
-
 import dagger.Binds;
 import dagger.Module;
 import dagger.multibindings.ClassKey;
@@ -144,14 +142,6 @@ public abstract class SystemUIStreakBinder {
     @IntoMap
     @ClassKey(SystemActions.class)
     public abstract SystemUI bindSystemActions(SystemActions sysui);
-
-    /**
-     * Inject into ThemeOverlayController.
-     */
-    @Binds
-    @IntoMap
-    @ClassKey(ThemeOverlayController.class)
-    public abstract SystemUI bindThemeOverlayController(ThemeOverlayControllerStreak sysui);
 
     /**
      * Inject into ToastUI.
