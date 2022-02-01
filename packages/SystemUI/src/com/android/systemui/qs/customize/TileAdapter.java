@@ -59,6 +59,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import com.android.systemui.qs.QSResourcesProvider;
+
 /** */
 @QSScope
 public class TileAdapter extends RecyclerView.Adapter<Holder> implements TileStateListener {
@@ -118,7 +120,8 @@ public class TileAdapter extends RecyclerView.Adapter<Holder> implements TileSta
         mItemTouchHelper = new ItemTouchHelper(mCallbacks);
         mDecoration = new TileItemDecoration(context);
         mMarginDecoration = new MarginTileDecoration();
-        mMinNumTiles = context.getResources().getInteger(R.integer.quick_settings_min_num_tiles);
+        QSResourcesProvider QSresProv = new QSResourcesProvider(context);
+        mMinNumTiles = context.getResources().getInteger(QSresProv.getQuickSettingsMinNumTiles());
         mNumColumns = context.getResources().getInteger(NUM_COLUMNS_ID);
         mAccessibilityDelegate = new TileAdapterDelegate();
         mSizeLookup.setSpanIndexCacheEnabled(true);

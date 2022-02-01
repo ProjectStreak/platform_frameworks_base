@@ -49,6 +49,8 @@ import com.android.systemui.plugins.qs.QSTileView
 import com.android.systemui.qs.tileimpl.QSIconViewImpl.QS_ANIM_LENGTH
 import java.util.Objects
 
+import com.android.systemui.qs.QSResourcesProvider
+
 private const val TAG = "QSTileViewImpl"
 open class QSTileViewImpl @JvmOverloads constructor(
     context: Context,
@@ -133,7 +135,9 @@ open class QSTileViewImpl @JvmOverloads constructor(
         setColor(getBackgroundColorForState(QSTile.State.DEFAULT_STATE))
 
         val padding = resources.getDimensionPixelSize(R.dimen.qs_tile_padding)
-        val startPadding = resources.getDimensionPixelSize(R.dimen.qs_tile_start_padding)
+
+        val QSresProv = QSResourcesProvider(context)
+        val startPadding = resources.getDimensionPixelSize(QSresProv.getQsTileStartPadding())
         setPaddingRelative(startPadding, padding, padding, padding)
 
         val iconSize = resources.getDimensionPixelSize(R.dimen.qs_icon_size)
@@ -149,6 +153,8 @@ open class QSTileViewImpl @JvmOverloads constructor(
     }
 
     fun updateResources() {
+        val QSresProv = QSResourcesProvider(context)
+    
         FontSizeUtils.updateFontSize(label, R.dimen.qs_tile_text_size)
         FontSizeUtils.updateFontSize(secondaryLabel, R.dimen.qs_tile_text_size)
 
@@ -159,7 +165,7 @@ open class QSTileViewImpl @JvmOverloads constructor(
         }
 
         val padding = resources.getDimensionPixelSize(R.dimen.qs_tile_padding)
-        val startPadding = resources.getDimensionPixelSize(R.dimen.qs_tile_start_padding)
+        val startPadding = resources.getDimensionPixelSize(QSresProv.getQsTileStartPadding())
         setPaddingRelative(startPadding, padding, padding, padding)
 
         val labelMargin = resources.getDimensionPixelSize(R.dimen.qs_label_container_margin)
@@ -211,7 +217,8 @@ open class QSTileViewImpl @JvmOverloads constructor(
     }
 
     fun createTileBackground(): Drawable {
-        ripple = mContext.getDrawable(R.drawable.qs_tile_background) as RippleDrawable
+        val QSresProv = QSResourcesProvider(context)
+        ripple = mContext.getDrawable(QSresProv.getQSTileBackground()) as RippleDrawable
         colorBackgroundDrawable = ripple.findDrawableByLayerId(R.id.background)
         return ripple
     }

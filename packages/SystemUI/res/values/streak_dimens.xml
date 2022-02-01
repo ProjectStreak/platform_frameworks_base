@@ -16,4 +16,11 @@
     <!-- Network traffic monitor -->
     <dimen name="net_traffic_multi_text_size">8dp</dimen>
     <dimen name="net_traffic_txt_img_padding">4dp</dimen>
+    
+    <dimen name="streak_qs_tile_start_padding">23.0dip</dimen>
+    <dimen name="streak_qs_tile_margin_horizontal">19.0dip</dimen>
+    <dimen name="streak_qs_quick_tile_size">67.0dip</dimen>
+    <dimen name="streak_qs_tile_height">67.0dip</dimen>
+    <dimen name="streak_qs_tile_margin_vertical">8.0dip</dimen>
+
 </resources>

@@ -50,6 +50,8 @@ import com.android.systemui.util.animation.UniqueObjectHostView;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.android.systemui.qs.QSResourcesProvider;
+
 /** View that represents the quick settings tile panel (when expanded/pulled down). **/
 public class QSPanel extends LinearLayout implements Tunable {
 
@@ -110,8 +112,8 @@ public class QSPanel extends LinearLayout implements Tunable {
         mUsingMediaPlayer = useQsMediaPlayer(context);
         mMediaTotalBottomMargin = getResources().getDimensionPixelSize(
                 R.dimen.quick_settings_bottom_margin_media);
-        mMediaTopMargin = getResources().getDimensionPixelSize(
-                R.dimen.qs_tile_margin_vertical);
+        QSResourcesProvider QSresProv = new QSResourcesProvider(context);
+        mMediaTopMargin = getResources().getDimensionPixelSize(QSresProv.getQSTileMarginVertical());
         mContext = context;
 
         setOrientation(VERTICAL);
@@ -685,7 +687,7 @@ public class QSPanel extends LinearLayout implements Tunable {
             reAttachMediaHost(mediaHostView, horizontal);
             if (needsDynamicRowsAndColumns()) {
                 mTileLayout.setMinRows(horizontal ? 2 : 1);
-                mTileLayout.setMaxColumns(horizontal ? 2 : 4);
+                mTileLayout.setMaxColumns(horizontal ? 2 : 5);
             }
             updateMargins(mediaHostView);
             mHorizontalLinearLayout.setVisibility(horizontal ? View.VISIBLE : View.GONE);

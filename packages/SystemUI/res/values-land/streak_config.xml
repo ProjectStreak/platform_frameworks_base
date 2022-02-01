@@ -15,18 +15,7 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Whether usage of the proximity sensor during doze is supported -->
-    <bool name="doze_proximity_sensor_supported">true</bool>
 
-    <!-- Max visible notification icons -->
-    <integer name="config_maxVisibleNotificationIcons">4</integer>
-    <integer name="config_maxVisibleNotificationIconsOnLock">5</integer>
-
-    <!-- If not zero, limits the internal screen recorder's framerate to the set value. -->
-    <integer name="config_screenRecorderMaxFramerate">0</integer>
-
-    <integer name="streak_quick_qs_panel_max_columns">5</integer>
-    <integer name="streak_quick_settings_min_num_tiles">6</integer>
-    <integer name="streak_quick_settings_num_columns">5</integer>
+    <integer name="streak_quick_qs_panel_max_columns">4</integer>
 
 </resources>

@@ -28,6 +28,8 @@ import com.android.systemui.plugins.qs.QSTile;
 import com.android.systemui.plugins.qs.QSTile.SignalState;
 import com.android.systemui.plugins.qs.QSTile.State;
 
+import com.android.systemui.qs.QSResourcesProvider;
+
 /**
  * Version of QSPanel that only shows N Quick Tiles in the QS Header.
  */
@@ -43,8 +45,10 @@ public class QuickQSPanel extends QSPanel {
 
     public QuickQSPanel(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        QSResourcesProvider QSresProv = new QSResourcesProvider(context);
         mMaxTiles = Math.min(DEFAULT_MAX_TILES,
-                getResources().getInteger(R.integer.quick_qs_panel_max_columns));
+                getResources().getInteger(QSresProv.getQuickQsMaxColumns()));
     }
 
     @Override
@@ -178,20 +182,23 @@ public class QuickQSPanel extends QSPanel {
     static class QQSSideLabelTileLayout extends SideLabelTileLayout {
 
         private boolean mLastSelected;
+        private QSResourcesProvider QSresProv;
 
         QQSSideLabelTileLayout(Context context) {
             super(context, null);
+            QSresProv = new QSResourcesProvider(context);
             setClipChildren(false);
             setClipToPadding(false);
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT,
                     LayoutParams.WRAP_CONTENT);
             setLayoutParams(lp);
             setMaxColumns(4);
+            updateResources();
         }
 
         @Override
         public boolean updateResources() {
-            mCellHeightResId = R.dimen.qs_quick_tile_size;
+            if(QSresProv!=null) mCellHeightResId = QSresProv.getQsTileSize();
             boolean b = super.updateResources();
             mMaxAllowedRows = 2;
             return b;
