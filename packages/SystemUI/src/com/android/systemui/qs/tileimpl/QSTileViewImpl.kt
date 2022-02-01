@@ -206,6 +206,7 @@ open class QSTileViewImpl @JvmOverloads constructor(
                 .inflate(R.layout.qs_tile_side_icon, this, false) as ViewGroup
         customDrawableView = sideView.requireViewById(R.id.customDrawable)
         chevronView = sideView.requireViewById(R.id.chevron)
+        chevronView.visibility = GONE
         setChevronColor(getChevronColorForState(QSTile.State.DEFAULT_STATE))
         addView(sideView)
     }
@@ -483,7 +484,7 @@ open class QSTileViewImpl @JvmOverloads constructor(
         } else if (state !is BooleanState || state.forceExpandIcon) {
             customDrawableView.setImageDrawable(null)
             customDrawableView.visibility = GONE
-            chevronView.visibility = VISIBLE
+            chevronView.visibility = GONE
         } else {
             customDrawableView.setImageDrawable(null)
             customDrawableView.visibility = GONE
