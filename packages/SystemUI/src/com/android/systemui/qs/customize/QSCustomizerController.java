@@ -52,6 +52,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import com.android.systemui.qs.QSResourcesProvider;
+
 /** {@link ViewController} for {@link QSCustomizer}. */
 @QSScope
 public class QSCustomizerController extends ViewController<QSCustomizer> {
@@ -126,9 +128,11 @@ public class QSCustomizerController extends ViewController<QSCustomizer> {
 
         mConfigurationController.addCallback(mConfigurationListener);
 
+        QSResourcesProvider QSresProv = new QSResourcesProvider(getContext());
+
         mTileQueryHelper.setListener(mTileAdapter);
         int halfMargin =
-                getResources().getDimensionPixelSize(R.dimen.qs_tile_margin_horizontal) / 2;
+                getResources().getDimensionPixelSize(QSresProv.getQsTileMarginHorizontal()) / 2;
         mTileAdapter.changeHalfMargin(halfMargin);
 
         RecyclerView recyclerView = mView.getRecyclerView();

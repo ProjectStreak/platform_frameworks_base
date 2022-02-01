@@ -19,6 +19,7 @@ package com.android.systemui.qs;
 import static com.android.systemui.media.dagger.MediaModule.QUICK_QS_PANEL;
 import static com.android.systemui.qs.dagger.QSFragmentModule.QS_USING_MEDIA_PLAYER;
 
+import android.content.Context;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.UiEventLogger;
 import com.android.systemui.R;
@@ -37,15 +38,21 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.android.systemui.qs.QSResourcesProvider;
+
 /** Controller for {@link QuickQSPanel}. */
 @QSScope
 public class QuickQSPanelController extends QSPanelControllerBase<QuickQSPanel> {
 
+    private QSResourcesProvider QSresProv;
+
     private final QSPanel.OnConfigurationChangedListener mOnConfigurationChangedListener =
             newConfig -> {
-                int newMaxTiles = getResources().getInteger(R.integer.quick_qs_panel_max_columns);
-                if (newMaxTiles != mView.getNumQuickTiles()) {
-                    setMaxTiles(newMaxTiles);
+                if(QSresProv!=null) {
+                    int newMaxTiles = getResources().getInteger(QSresProv.getQuickQsMaxColumns());
+                    if (newMaxTiles != mView.getNumQuickTiles()) {
+                        setMaxTiles(newMaxTiles);
+                    }
                 }
             };
 
@@ -59,6 +66,7 @@ public class QuickQSPanelController extends QSPanelControllerBase<QuickQSPanel> 
     ) {
         super(view, qsTileHost, qsCustomizerController, usingMediaPlayer, mediaHost, metricsLogger,
                 uiEventLogger, qsLogger, dumpManager, featureFlags);
+                QSresProv = new QSResourcesProvider(getContext());
     }
 
     @Override

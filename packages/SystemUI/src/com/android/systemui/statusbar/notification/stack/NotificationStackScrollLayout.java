@@ -128,6 +128,9 @@ import java.util.function.Consumer;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.android.systemui.qs.QSResourcesProvider;
+
+
 /**
  * A layout which handles a dynamic amount of notifications and presents them in a scrollable stack.
  */
@@ -937,7 +940,9 @@ public class NotificationStackScrollLayout extends ViewGroup implements Dumpable
         mStatusBarHeight = res.getDimensionPixelSize(R.dimen.status_bar_height);
         mBottomMargin = res.getDimensionPixelSize(R.dimen.notification_panel_margin_bottom);
         mMinimumPaddings = res.getDimensionPixelSize(R.dimen.notification_side_paddings);
-        mQsTilePadding = res.getDimensionPixelOffset(R.dimen.qs_tile_margin_horizontal);
+
+        QSResourcesProvider QSresProv = new QSResourcesProvider(context);
+        mQsTilePadding = res.getDimensionPixelOffset(QSresProv.getQsTileMarginHorizontal());
         mSkinnyNotifsInLandscape = res.getBoolean(R.bool.config_skinnyNotifsInLandscape);
         mSidePaddings = mMinimumPaddings;  // Updated in onMeasure by updateSidePadding()
         mMinInteractionHeight = res.getDimensionPixelSize(

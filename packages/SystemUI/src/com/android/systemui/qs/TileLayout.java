@@ -16,7 +16,10 @@ import com.android.systemui.qs.QSPanelControllerBase.TileRecord;
 
 import java.util.ArrayList;
 
+import com.android.systemui.qs.QSResourcesProvider;
+
 public class TileLayout extends ViewGroup implements QSTileLayout {
+    
 
     public static final int NO_MAX_COLUMNS = 100;
 
@@ -41,6 +44,7 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
     private int mMinRows = 1;
     private int mMaxColumns = NO_MAX_COLUMNS;
     protected int mResourceColumns;
+    QSResourcesProvider QSresProv;
 
     public TileLayout(Context context) {
         this(context, null);
@@ -51,6 +55,7 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
         setFocusableInTouchMode(true);
         mLessRows = ((Settings.System.getInt(context.getContentResolver(), "qs_less_rows", 0) != 0)
                 || useQsMediaPlayer(context));
+        QSresProv = new QSResourcesProvider(context);
         updateResources();
     }
 
@@ -115,12 +120,12 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
 
     public boolean updateResources() {
         final Resources res = mContext.getResources();
-        mResourceColumns = Math.max(1, res.getInteger(R.integer.quick_settings_num_columns));
+        mResourceColumns = Math.max(1, res.getInteger(QSresProv.getQuickSettingsNumColumns()));
         updateColumns();
-        mMaxCellHeight = mContext.getResources().getDimensionPixelSize(mCellHeightResId);
+        mMaxCellHeight = mContext.getResources().getDimensionPixelSize(QSresProv.getQsTileHeight());
         mCellMarginHorizontal = res.getDimensionPixelSize(R.dimen.qs_tile_margin_horizontal);
         mSidePadding = useSidePadding() ? mCellMarginHorizontal / 2 : 0;
-        mCellMarginVertical= res.getDimensionPixelSize(R.dimen.qs_tile_margin_vertical);
+        mCellMarginVertical= res.getDimensionPixelSize(QSresProv.getQSTileMarginVertical());
         mMaxAllowedRows = Math.max(1, getResources().getInteger(R.integer.quick_settings_max_rows));
         if (mLessRows) mMaxAllowedRows = Math.max(mMinRows, mMaxAllowedRows - 1);
         if (updateColumns()) {
