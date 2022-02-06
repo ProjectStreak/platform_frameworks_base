@@ -139,7 +139,8 @@ public class ThemeOverlayController extends SystemUI implements Dumpable {
     private boolean mDeferredThemeEvaluation;
     // Determines if we should ignore THEME_CUSTOMIZATION_OVERLAY_PACKAGES setting changes.
     private boolean mSkipSettingChange;
-    final Context context = ActivityThread.currentApplication();
+
+    ColorSchemeMain colorScheme;
 
     private final DeviceProvisionedListener mDeviceProvisionedListener =
             new DeviceProvisionedListener() {
@@ -184,9 +185,9 @@ public class ThemeOverlayController extends SystemUI implements Dumpable {
 
         void observe() {
             ContentResolver resolver = mContext.getContentResolver();
-            resolver.registerContentObserver(Settings.System.getUriFor(Settings.System.MONET_CUSTOM_THEME), false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.System.getUriFor(Settings.System.MONET_CUSTOM_COLOR), false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.System.getUriFor(Settings.System.MONET_PLAIN_THEME), false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(Settings.System.MONET_CUSTOM_THEME), false, this, UserHandle.USER_CURRENT);
+            resolver.registerContentObserver(Settings.System.getUriFor(Settings.System.MONET_CUSTOM_COLOR), false, this, UserHandle.USER_CURRENT);
+            resolver.registerContentObserver(Settings.System.getUriFor(Settings.System.MONET_PLAIN_THEME), false, this, UserHandle.USER_CURRENT);
         }
 
         @Override
@@ -451,7 +452,13 @@ public class ThemeOverlayController extends SystemUI implements Dumpable {
      * Given a color candidate, return an overlay definition.
      */
     protected @Nullable FabricatedOverlay getOverlay(int color, int type) {
-        ColorSchemeMain colorScheme = new ColorSchemeMain(context, color);
+        int customColor = Settings.System.getInt(mContext.getContentResolver(), Settings.System.MONET_CUSTOM_COLOR, 0);
+        boolean enabled = Settings.System.getInt(mContext.getContentResolver(), Settings.System.MONET_CUSTOM_THEME, 0) != 0;
+        if(enabled && customColor != 0)
+            colorScheme = new ColorSchemeMain(mContext, customColor);
+        else
+            colorScheme = new ColorSchemeMain(mContext, color);
+
         List<Integer> colorList = type == ACCENT
                 ? colorScheme.getAllAccentColors() : colorScheme.getAllNeutralColors();
         String name = type == ACCENT ? "accent" : "neutral";
