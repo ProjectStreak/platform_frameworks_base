@@ -37,6 +37,9 @@
     <string name="qs_data_switch_changed_1">Switch data card to SIM 1.</string>
     <string name="qs_data_switch_changed_2">Switch data card to SIM 2.</string>
 
+    <!-- Face Unlock -->
+    <string name="face_unlock_recognizing">Recognizing face...</string>
+
     <!-- Heads Up QS Tile -->
     <string name="quick_settings_heads_up_label">Peek notifications</string>
     <string name="accessibility_quick_settings_heads_up_off">Peek notifications disabled.</string>
