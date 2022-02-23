@@ -23,4 +23,10 @@
 
     <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
     <string name="screenshot_delete_description">Delete screenshot</string>
+
+    <!-- QR QS Tile -->
+    <string name="quick_settings_qr_label">QR code</string>
+    <string name="quick_settings_qr_description">Tap to scan</string>
+    <string name="qr_code_activity_title">QR code scanner</string>
+    <string name="delete_text_history">Clear history</string>
 </resources>
