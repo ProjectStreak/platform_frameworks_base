@@ -64,4 +64,9 @@
     <string name="screenrecord_lowquality_label">Lower quality for smaller file size</string>
     <string name="screenrecord_longer_timeout_switch_label">Bigger file size limit\nLimit recording size to 15GiB</string>
 
+    <!-- QR QS Tile -->
+    <string name="quick_settings_qr_label">QR code</string>
+    <string name="quick_settings_qr_description">Tap to scan</string>
+    <string name="qr_code_activity_title">QR code scanner</string>
+    <string name="delete_text_history">Clear history</string>
 </resources>
