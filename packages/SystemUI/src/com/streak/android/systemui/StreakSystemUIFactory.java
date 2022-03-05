@@ -2,7 +2,6 @@ package com.streak.android.systemui;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.os.Handler;
 
 import com.streak.android.systemui.dagger.StreakGlobalRootComponent;
 import com.streak.android.systemui.dagger.StreakSysUIComponent;
