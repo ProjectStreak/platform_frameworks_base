@@ -16,23 +16,21 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- USB tethering QS tile -->
-    <string name="quick_settings_usb_tether_label">USB tethering</string>
+    <string name="quick_settings_usb_tether_label">Tethering przez USB</string>
     <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
-    <string name="screenshot_delete_label">Delete</string>
+    <string name="screenshot_delete_label">Usuń</string>
     <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
-    <string name="screenshot_delete_description">Delete screenshot</string>
+    <string name="screenshot_delete_description">Usuń zrzut ekranu</string>
     <!-- QR QS Tile -->
-    <string name="quick_settings_qr_label">QR code</string>
-    <string name="quick_settings_qr_description">Tap to scan</string>
-    <string name="qr_code_activity_title">QR code scanner</string>
-    <string name="delete_text_history">Clear history</string>
+    <string name="quick_settings_qr_label">Kod QR</string>
+    <string name="quick_settings_qr_description">Dotknij, aby zeskanować</string>
+    <string name="qr_code_activity_title">Skaner kodów QR</string>
+    <string name="delete_text_history">Wyczyść historię</string>
     <!-- Statusbar tuner -->
-    <string name="statusbar_items_title">Statusbar icons</string>
+    <string name="statusbar_items_title">Ikony paska stanu</string>
     <!-- Name of the VPN status bar icon. -->
     <string name="status_bar_vpn">VPN</string>
     <!-- Advanced Reboot -->
-    <string name="global_action_restart_advanced">Advanced</string>
-    <string name="global_action_restart_recovery">Recovery</string>
-    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_advanced">Zaawansowane</string>
     <string name="global_action_restart_ui">SystemUI</string>
 </resources>

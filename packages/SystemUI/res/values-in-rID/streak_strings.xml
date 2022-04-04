@@ -16,10 +16,23 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB Tethering</string>
     <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
+    <string name="screenshot_delete_label">Hapus</string>
     <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
+    <string name="screenshot_delete_description">Hapus hasil tangkapan layar</string>
     <!-- QR QS Tile -->
+    <string name="quick_settings_qr_label">Kode QR</string>
+    <string name="quick_settings_qr_description">Ketuk untuk memindai</string>
+    <string name="qr_code_activity_title">Pemindai kode QR</string>
+    <string name="delete_text_history">Bersihkan riwayat</string>
     <!-- Statusbar tuner -->
+    <string name="statusbar_items_title">Ikon statusbar</string>
     <!-- Name of the VPN status bar icon. -->
+    <string name="status_bar_vpn">VPN</string>
     <!-- Advanced Reboot -->
+    <string name="global_action_restart_advanced">Lanjutan</string>
+    <string name="global_action_restart_recovery">Recovery</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">SystemUI</string>
 </resources>
