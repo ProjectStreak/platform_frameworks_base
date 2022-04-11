@@ -3,4 +3,5 @@
     <!-- Advanced reboot -->
     <string name="reboot_title">Újraindítás</string>
     <string name="reboot_message">A rendszer újraindul</string>
+    <!-- Face unlock -->
 </resources>
