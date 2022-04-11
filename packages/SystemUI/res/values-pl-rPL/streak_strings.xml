@@ -34,4 +34,5 @@
     <string name="global_action_restart_advanced">Zaawansowane</string>
     <string name="global_action_restart_ui">SystemUI</string>
     <!-- Mono QS Tile -->
+    <!-- Face Unlock -->
 </resources>
