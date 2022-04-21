@@ -16,10 +16,29 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB internet paylaşımı</string>
     <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
+    <string name="screenshot_delete_label">Sil</string>
     <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
+    <string name="screenshot_delete_description">Ekran görüntüsünü sil</string>
     <!-- QR QS Tile -->
+    <string name="quick_settings_qr_label">QR kodu</string>
+    <string name="quick_settings_qr_description">Taramak için dokunun</string>
+    <string name="qr_code_activity_title">QR kod tarayıcı</string>
+    <string name="delete_text_history">Geçmişi temizle</string>
     <!-- Statusbar tuner -->
+    <string name="statusbar_items_title">Durum çubuğu simgeleri</string>
     <!-- Name of the VPN status bar icon. -->
+    <string name="status_bar_vpn">VPN</string>
     <!-- Advanced Reboot -->
+    <string name="global_action_restart_advanced">Gelişmiş seçenekler</string>
+    <string name="global_action_restart_recovery">İyileşme</string>
+    <string name="global_action_restart_bootloader">Ön yükleyici</string>
+    <string name="global_action_restart_ui">Sistem Arayüzü</string>
+    <!-- Mono QS Tile -->
+    <string name="quick_settings_monotoggle_tile">Ses modu</string>
+    <string name="quick_settings_monotoggle_tile_mono">Mono ses</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Stereo ses</string>
+    <!-- Face Unlock -->
+    <string name="face_unlock_recognizing">Yüz algılanıyor...</string>
 </resources>

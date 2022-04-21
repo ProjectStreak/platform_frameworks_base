@@ -3,4 +3,5 @@
     <!-- Advanced reboot -->
     <string name="reboot_title">Uruchom ponownie</string>
     <string name="reboot_message">Ponowne uruchamianie</string>
+    <!-- Face unlock -->
 </resources>

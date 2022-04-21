@@ -3,4 +3,5 @@
     <!-- Advanced reboot -->
     <string name="reboot_title">Nyalakan Ulang</string>
     <string name="reboot_message">Memulai ulang sistem</string>
+    <!-- Face unlock -->
 </resources>

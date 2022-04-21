@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="reboot_title">Yeniden başlat</string>
+    <string name="reboot_message">Sistem yeniden başlatılıyor</string>
+    <!-- Face unlock -->
+    <string name="face_unlock_disabled_idle">Hareketsizlik nedeniyle yüz kilidi devre dışı bırakıldı</string>
 </resources>
