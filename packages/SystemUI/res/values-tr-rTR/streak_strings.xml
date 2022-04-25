@@ -41,4 +41,8 @@
     <string name="quick_settings_monotoggle_tile_stereo">Stereo ses</string>
     <!-- Face Unlock -->
     <string name="face_unlock_recognizing">Yüz algılanıyor...</string>
+    <!-- Name of the nfc status bar icon. -->
+    <!-- Accessibility label for nfc icon (not shown on screen) [CHAR LIMIT=NONE] -->
+    <!-- Caffeine QS tile -->
+    <!-- Heads up QS tile -->
 </resources>
