@@ -5,4 +5,5 @@
     <string name="reboot_message">Sistem yeniden başlatılıyor</string>
     <!-- Face unlock -->
     <string name="face_unlock_disabled_idle">Hareketsizlik nedeniyle yüz kilidi devre dışı bırakıldı</string>
+    <!-- SystemUI Restart -->
 </resources>
