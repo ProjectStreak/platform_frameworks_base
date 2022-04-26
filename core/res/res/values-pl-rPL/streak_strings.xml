@@ -4,5 +4,8 @@
     <string name="reboot_title">Uruchom ponownie</string>
     <string name="reboot_message">Ponowne uruchamianie</string>
     <!-- Face unlock -->
+    <string name="face_unlock_disabled_idle">Rozpoznawanie twarzy wyłączone z powodu braku aktywności</string>
     <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">Wymagany restart SystemUI</string>
+    <string name="systemui_restart_message">Aby wszystkie zmiany zostały wprowadzone wymagany jest restart SystemUI. Zrestartować SystemUI teraz?</string>
 </resources>
