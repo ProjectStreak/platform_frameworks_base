@@ -29,16 +29,16 @@
     <!-- Statusbar tuner -->
     <string name="statusbar_items_title">Durum çubuğu simgeleri</string>
     <!-- Name of the VPN status bar icon. -->
-    <string name="status_bar_vpn">VPN</string>
     <!-- Advanced Reboot -->
     <string name="global_action_restart_advanced">Gelişmiş seçenekler</string>
-    <string name="global_action_restart_recovery">İyileşme</string>
-    <string name="global_action_restart_bootloader">Ön yükleyici</string>
-    <string name="global_action_restart_ui">Sistem Arayüzü</string>
     <!-- Mono QS Tile -->
     <string name="quick_settings_monotoggle_tile">Ses modu</string>
     <string name="quick_settings_monotoggle_tile_mono">Mono ses</string>
     <string name="quick_settings_monotoggle_tile_stereo">Stereo ses</string>
     <!-- Face Unlock -->
     <string name="face_unlock_recognizing">Yüz algılanıyor...</string>
+    <!-- Name of the nfc status bar icon. -->
+    <!-- Accessibility label for nfc icon (not shown on screen) [CHAR LIMIT=NONE] -->
+    <!-- Caffeine QS tile -->
+    <!-- Heads up QS tile -->
 </resources>
