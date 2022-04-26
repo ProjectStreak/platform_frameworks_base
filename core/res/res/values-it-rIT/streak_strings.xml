@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="reboot_title">Riavvio</string>
+    <string name="reboot_message">Riavvio Sistema</string>
     <!-- Face unlock -->
+    <string name="face_unlock_disabled_idle">Face Unlock disabilitato per inattività</string>
+    <!-- SystemUI Restart -->
 </resources>
