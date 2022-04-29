@@ -16,16 +16,37 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">Partage de connexion USB</string>
     <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
+    <string name="screenshot_delete_label">Supprimer</string>
     <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
+    <string name="screenshot_delete_description">Supprimer la capture d\'écran</string>
     <!-- QR QS Tile -->
+    <string name="quick_settings_qr_label">Code QR</string>
+    <string name="quick_settings_qr_description">Appuyer pour scanner</string>
+    <string name="qr_code_activity_title">Scanner code QR</string>
+    <string name="delete_text_history">Vider l\'historique</string>
     <!-- Statusbar tuner -->
+    <string name="statusbar_items_title">Icône de la barre d\'état</string>
     <!-- Name of the VPN status bar icon. -->
     <!-- Advanced Reboot -->
+    <string name="global_action_restart_advanced">Avancé</string>
     <!-- Mono QS Tile -->
+    <string name="quick_settings_monotoggle_tile">Réglage audio</string>
+    <string name="quick_settings_monotoggle_tile_mono">Audio mono</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Audio stéréo</string>
     <!-- Face Unlock -->
+    <string name="face_unlock_recognizing">Reconnaissance faciale...</string>
     <!-- Name of the nfc status bar icon. -->
     <!-- Accessibility label for nfc icon (not shown on screen) [CHAR LIMIT=NONE] -->
     <!-- Caffeine QS tile -->
+    <string name="quick_settings_caffeine_label">Caféine</string>
+    <string name="accessibility_quick_settings_caffeine_off">Caffeine désactivé.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Caffeine activé</string>
     <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Notifications flottantes</string>
+    <string name="accessibility_quick_settings_heads_up_off">Notifications flottantes désactivées.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Activer les notifications flottantes.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Notifications flottantes ont été désactivées.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Les notifications flottantes ont été activés.</string>
 </resources>
