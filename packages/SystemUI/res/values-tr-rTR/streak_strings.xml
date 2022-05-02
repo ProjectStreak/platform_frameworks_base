@@ -40,5 +40,13 @@
     <!-- Name of the nfc status bar icon. -->
     <!-- Accessibility label for nfc icon (not shown on screen) [CHAR LIMIT=NONE] -->
     <!-- Caffeine QS tile -->
+    <string name="quick_settings_caffeine_label">Kafein modu</string>
+    <string name="accessibility_quick_settings_caffeine_off">Kafein kapalı.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Kafein açık.</string>
     <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Bildirim pencereleri üst bilgi</string>
+    <string name="accessibility_quick_settings_heads_up_off">Bildirim pencereleri kapalı.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Bildirim pencereleri açık.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Bildirim pencereleri kapatıldı.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Bildirim pencereleri açıldı.</string>
 </resources>
