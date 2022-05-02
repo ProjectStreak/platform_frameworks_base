@@ -6,4 +6,6 @@
     <!-- Face unlock -->
     <string name="face_unlock_disabled_idle">Hareketsizlik nedeniyle yüz kilidi devre dışı bırakıldı</string>
     <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">Sistem arayüzünü yeniden başlatma gerekli</string>
+    <string name="systemui_restart_message">Tüm değişikliklerin etkili olabilmesi için, sistem arayüzü yeniden başlatılmalı. Yeniden başlatmak ister misiniz?</string>
 </resources>
