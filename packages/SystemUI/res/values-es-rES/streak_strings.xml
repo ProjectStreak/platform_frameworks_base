@@ -16,16 +16,37 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">Anclaje USB</string>
     <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
+    <string name="screenshot_delete_label">Borrar</string>
     <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
+    <string name="screenshot_delete_description">Eliminar captura de pantalla</string>
     <!-- QR QS Tile -->
+    <string name="quick_settings_qr_label">Código QR</string>
+    <string name="quick_settings_qr_description">Toca para escanear</string>
+    <string name="qr_code_activity_title">Lector de códigos QR</string>
+    <string name="delete_text_history">Borrar historial</string>
     <!-- Statusbar tuner -->
+    <string name="statusbar_items_title">Íconos de la barra de estado</string>
     <!-- Name of the VPN status bar icon. -->
     <!-- Advanced Reboot -->
+    <string name="global_action_restart_advanced">Avanzado</string>
     <!-- Mono QS Tile -->
+    <string name="quick_settings_monotoggle_tile">Modo de audio</string>
+    <string name="quick_settings_monotoggle_tile_mono">Audio mono</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Audio estéreo</string>
     <!-- Face Unlock -->
+    <string name="face_unlock_recognizing">Reconociendo cara...</string>
     <!-- Name of the nfc status bar icon. -->
     <!-- Accessibility label for nfc icon (not shown on screen) [CHAR LIMIT=NONE] -->
     <!-- Caffeine QS tile -->
+    <string name="quick_settings_caffeine_label">Cafeína</string>
+    <string name="accessibility_quick_settings_caffeine_off">Cafeína desactivada.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Cafeína activada.</string>
     <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Notificaciones emergentes</string>
+    <string name="accessibility_quick_settings_heads_up_off">Notificaciones emergentes desactivadas.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Notificaciones emergentes activadas.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Notificaciones emergentes desactivadas.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Notificaciones emergentes activadas.</string>
 </resources>
