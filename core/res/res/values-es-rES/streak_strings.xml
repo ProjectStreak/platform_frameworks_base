@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
+    <string name="reboot_title">Reiniciar</string>
+    <string name="reboot_message">Reiniciando</string>
     <!-- Face unlock -->
+    <string name="face_unlock_disabled_idle">Desbloqueo facial desactivado por inactividad</string>
     <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">Se requiere reiniciar la UI del sistema</string>
+    <string name="systemui_restart_message">Para que todos los cambios surtan efecto, se requiere reiniciar IU del sistema. ¿Reiniciar UI del sistema ahora?</string>
 </resources>
